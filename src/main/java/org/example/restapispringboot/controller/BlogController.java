@@ -1,5 +1,6 @@
 package org.example.restapispringboot.controller;
 
+import org.example.restapispringboot.entity.Blog;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,5 +21,11 @@ public class BlogController {
     @GetMapping("/number/{number}")
     public String getNumber(@PathVariable String number) {
         return number;
+    }
+
+    @GetMapping("/object")
+    public Object getObject() {
+        Blog blog = new Blog();
+        return blog;
     }
 }
