@@ -1,13 +1,17 @@
 package org.example.restapispringboot.controller;
 
 import org.example.restapispringboot.entity.Blog;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.example.restapispringboot.repository.BlogRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
+@RestController
 @RequestMapping("/blog")
 public class BlogController {
+
+    @Autowired
+    public BlogRepository blogRepository ;
+
     @GetMapping("/hello")
     public String hello(){
         return "Hello World";
