@@ -5,6 +5,8 @@ import org.example.restapispringboot.repository.BlogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/blog")
 public class BlogController {
@@ -31,5 +33,14 @@ public class BlogController {
     public Object getObject() {
         Blog blog = new Blog();
         return blog;
+    }
+
+    @PostMapping("/savepost")
+    public void savePOst(@RequestBody Blog blog){
+        blogRepository.save(blog);
+    }
+    @GetMapping("/getAllpost")
+    public List<Blog> getAllPost( ){
+        return blogRepository.findAll();
     }
 }
