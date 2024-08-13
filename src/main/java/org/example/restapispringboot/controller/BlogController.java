@@ -19,7 +19,7 @@ public class BlogController {
         return "Hello World";
     }
 
-    @PostMapping("number")
+    @PostMapping("/number")
     public int getNumber(){
         return 1;
     }
@@ -43,4 +43,6 @@ public class BlogController {
     public List<Blog> getAllPost( ){
         return blogRepository.findAll();
     }
+
+
 }
