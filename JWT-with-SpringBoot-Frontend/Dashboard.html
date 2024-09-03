@@ -12,5 +12,36 @@
     </div>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $(document).ready(function (){
+            let token = localStorage.getItem("token");
+            if (token){
+                $.ajax({
+                    url:"http://localhost:8080/api/v1/blog/newMethod",
+                    method:"GET",
+                    contentType:"application/json",
+                    headers:{
+                        "Authorization":"Bearer" + token
+                    },
+                    success:function (response){
+                        console.log(response)
+                        $('<p>'+response+'</p>').appendTo('body');
+                    },
+                    error:function (error){
+                        console.log(error)
+                    }
+                })
+            }else {
+                window.location.href = 'SignIn.html';
+            }
+        })
+        function logout() {
+            // Remove the token from localStorage or sessionStorage
+            localStorage.removeItem("token");
+            // Redirect to the login page
+            window.location.href = 'SignIn.html'; // Change this to your login page
+        }
+    </script>
 </body>
 </html>
