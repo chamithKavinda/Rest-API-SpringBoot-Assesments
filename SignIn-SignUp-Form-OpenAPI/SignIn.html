@@ -3,7 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <title>Sign In</title>
+    <style>
+        #signInForm {
+            width: 350px;
+            margin: 100px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        #signInForm h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        #signInForm input[type="email"],
+        #signInForm input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        #signInForm button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
+        #signInForm button:hover {
+            background-color: #4cae4c;
+        }
+
+        #signInForm p {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        #signInForm a {
+            color: #007bff;
+            text-decoration: none;
+            margin-left: 5px;
+        }
+
+        #signInForm a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <div id="signInForm">
